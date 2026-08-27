@@ -2,16 +2,13 @@ package org.skypro.skyshop.search;
 
 import org.skypro.skyshop.exceptions.BestResultNotFound;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class SearchEngine {
-    private final List<Searchable> searchables;
+    private final Set<Searchable> searchables;
 
     public SearchEngine(int iSize) {
-        searchables = new LinkedList<>();
+        searchables = new HashSet<>();
     }
 
     public void add(Searchable searchable) {
