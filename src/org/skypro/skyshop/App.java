@@ -12,6 +12,7 @@ import org.skypro.skyshop.search.Searchable;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class App {
     public static void main(String[] args) {
@@ -103,21 +104,21 @@ public class App {
         searchEngine.add(article3);
         searchEngine.add(article4);
 
-        Map<String, Searchable> result1 = searchEngine.search("футболка");
+        Set<Searchable> result1 = searchEngine.search("футболка");
         System.out.println("\nПо запросу 'футболка' найдено:");
-        for (Searchable resault : result1.values()) {
+        for (Searchable resault : result1) {
             System.out.println(resault.getStringRepresentation());
         }
 
-        Map<String, Searchable> result2 = searchEngine.search("Шорты");
+        Set<Searchable> result2 = searchEngine.search("Шорты");
         System.out.println("\nПо запроссу 'Шорты' найдено:");
-        for (Searchable resault : result2.values()) {
+        for (Searchable resault : result2) {
             System.out.println(resault.getStringRepresentation());
         }
 
-        Map<String, Searchable> result3 = searchEngine.search("рубашка");
+        Set<Searchable> result3 = searchEngine.search("рубашка");
         System.out.println("\nПо запроссу 'рубашка' найдено:");
-        for (Searchable resault : result3.values()) {
+        for (Searchable resault : result3) {
             System.out.println(resault.getStringRepresentation());
         }
         System.out.println("=================================================");

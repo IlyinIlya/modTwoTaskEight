@@ -15,11 +15,19 @@ public class SearchEngine {
         searchables.add(searchable);
     }
 
-    public Map<String, Searchable> search(String searchTerm) {
-        Map<String, Searchable> elements = new TreeMap<>();
+    public Set<Searchable> search(String searchTerm) {
+        Comparator<Searchable> iComp = (o1, o2) -> {
+            int iRes = Integer.compare(o2.getName().length(), o1.getName().length());
+            if (iRes == 0) {
+                iRes = o1.getName().compareTo(o2.getName());
+            }
+            return iRes;
+        };
+
+        Set<Searchable> elements = new TreeSet<>(iComp);
         for (Searchable searchable : searchables) {
             if (searchable != null && searchable.getSearchTerm().toLowerCase().contains(searchTerm.toLowerCase())) {
-                elements.put(searchable.getName(), searchable);
+                elements.add(searchable);
             }
         }
         return elements;
