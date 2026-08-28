@@ -105,19 +105,19 @@ public class App {
         searchEngine.add(article4);
 
         Set<Searchable> result1 = searchEngine.search("футболка");
-        System.out.println("\nПо запросу 'футболка' найдено:");
+        System.out.println("\nПо запросу 'футболка' найдено: ");
         for (Searchable resault : result1) {
             System.out.println(resault.getStringRepresentation());
         }
 
         Set<Searchable> result2 = searchEngine.search("Шорты");
-        System.out.println("\nПо запроссу 'Шорты' найдено:");
+        System.out.println("\nПо запроссу 'Шорты' найдено: ");
         for (Searchable resault : result2) {
             System.out.println(resault.getStringRepresentation());
         }
 
         Set<Searchable> result3 = searchEngine.search("рубашка");
-        System.out.println("\nПо запроссу 'рубашка' найдено:");
+        System.out.println("\nПо запроссу 'рубашка' найдено: ");
         for (Searchable resault : result3) {
             System.out.println(resault.getStringRepresentation());
         }
